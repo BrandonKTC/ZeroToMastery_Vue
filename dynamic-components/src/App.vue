@@ -1,7 +1,7 @@
 <template>
 	<select v-model="componentName">
-		<option value="Home">Home</option>
-		<option value="About">About</option>
+		<option value="AppHome">Home</option>
+		<option value="AppAbout">About</option>
 	</select>
 	<keep-alive>
 		<component :is="componentName"></component>
@@ -9,18 +9,29 @@
 </template>
 
 <script>
-	import Home from '@/components/Home.vue'
-	import About from '@/components/About.vue'
-	export default {
-		name: 'App',
-		components: {
-			About,
-			Home,
-		},
-		data() {
-			return {
-				componentName: 'Home',
-			}
-		},
-	}
+import AppHome from "./components/Home.vue";
+import AppAbout from "./components/About.vue";
+export default {
+	name: "App",
+	components: {
+		AppHome,
+		AppAbout,
+	},
+	data() {
+		return {
+			componentName: "AppHome",
+		};
+	},
+};
 </script>
+
+<style>
+#app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
+}
+</style>
